@@ -1,0 +1,16 @@
+body {
+  background-color: gray;
+}
+
+textarea {
+  width: 200px;
+  height: 100px;
+}
+
+.noteField {
+  vertical-align: top;
+}
+
+.notesLabel {
+  vertical-align: top;
+}
