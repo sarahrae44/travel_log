@@ -1,19 +1,12 @@
-const trips = [
-  {
-    name: 'Italy',
-    date: 'April 2015',
-    notes: 'Great trip - Rome, Florence, Venice'
-  },
-  {
-    name: 'Iceland',
-    date: 'December 2015',
-    notes: 'The most beautiful place I have ever been!'
-  },
-  {
-    name: 'Costa Rica',
-    date: 'April 2016',
-    notes: 'So much fun and such an ecologically diverse, peaceful country.'
-  }
-]
+const mongoose = require('mongoose');
 
-module.exports = trips;
+const tripSchema = new mongoose.Schema({
+  name: { type: String, required: true, unique: true },
+  date: { type: String, require: true },
+  notes: { type: String },
+  photos: { type: Array }
+});
+
+const Trip = mongoose.model('Trip', tripSchema);
+
+module.exports = Trip;
