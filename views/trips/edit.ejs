@@ -6,6 +6,12 @@
     <title></title>
   </head>
   <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/trips">Trips Index</a></li>
+      </ul>
+    </nav>
     <h1>Edit <%=trip.name%> Page</h1>
     <form action="/trips/<%=trip.id%>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%=trip.name%>"/><br />

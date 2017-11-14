@@ -3,7 +3,7 @@ const router = express.Router();
 const Trip = require('../models/trips.js');
 
 router.get('/new', (req, res) => {
-  res.render('new.ejs');
+  res.render('trips/new.ejs');
 });
 
 router.post('/', (req, res) => {
@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
   Trip.find({}, (error, allTrips) => {
-    res.render('index.ejs', {
+    res.render('trips/index.ejs', {
       trips: allTrips
     });
   });
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Trip.findById(req.params.id, (err, foundTrip) => {
-    res.render('show.ejs', {
+    res.render('trips/show.ejs', {
       trip:foundTrip
     });
   });
@@ -36,7 +36,7 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id/edit', (req, res) => {
   Trip.findById(req.params.id, (err, foundTrip) => {
-    res.render('edit.ejs', {
+    res.render('trips/edit.ejs', {
       trip: foundTrip
     });
   });

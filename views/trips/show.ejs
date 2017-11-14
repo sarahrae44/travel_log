@@ -6,8 +6,16 @@
     <title></title>
   </head>
   <body>
-    <h1>Trips show page</h1>
+    <h1>Show Page for <%=trip.name%></h1>
     The <%=trip.name%> was taken in <%=trip.date%>. Here are the notes: <%=trip.notes%>.
+    <section>
+      <a href="/trips/<%=trip._id; %>/edit">Edit</a>
+    </section>
+    <section>
+      <form action="/trips/<%=trip._id; %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Trip" />
+      </form>
+    </section>
     <nav>
       <a href="/trips">Back to Trips Index</a>
     </nav>
