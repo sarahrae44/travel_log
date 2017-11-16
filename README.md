@@ -7,3 +7,5 @@ Time:
 11/10: 5 hours
 
 11/13: .5 hours
+
+11/16: 3 hours
