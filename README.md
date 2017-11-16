@@ -8,4 +8,4 @@ Time:
 
 11/13: .5 hours
 
-11/16: 3 hours
+11/16: 2.5 hours
