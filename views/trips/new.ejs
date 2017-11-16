@@ -9,11 +9,17 @@
     <h1>Add a new trip</h1>
     <div class="noteField">
       <form action="/trips" method="POST">
+        <select name="userId">
+          <% for(let i = 0; i < users.length; i++) { %>
+            <option value="<%=users[i]._id%>"><%=users[i].name%></option>
+          <% } %>
+        </select><br />
         Name: <input type="text" name="name" placeholder="Where did you go?" /><br/>
         Date: <input type="text" name="date" placeholder="Month Year" /><br/>
         <label class="notesLabel">Notes:</label> <textarea name="notes" /></textarea><br/>
         <input type="submit" value="Add new place" />
       </form>
   </div>
+  <a href="/">Home</a>
   </body>
 </html>

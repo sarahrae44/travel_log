@@ -6,8 +6,9 @@
     <title></title>
   </head>
   <body>
-    <h1>Show Page for <%=trip.name%></h1>
-    The <%=trip.name%> was taken in <%=trip.date%>. Here are the notes: <%=trip.notes%>.
+    <h1><%=trip.name%></h1>
+    The <%=trip.name%> was taken in <%=trip.date%>. Here are the notes: <%=trip.notes%>.<br/>
+    <small>Contributed by <a href="/users/<%=user._id%>"><%=user.name%></a></small>
     <section>
       <a href="/trips/<%=trip._id; %>/edit">Edit</a>
     </section>

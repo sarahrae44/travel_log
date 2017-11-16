@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1><%=user.name%></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/users">Users Index</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <%=user.name%>
+      </section>
+      <section>
+        <h2>Trips added by this user:</h2>
+        <ul>
+          <% for(let i = 0; i < user.trips.length; i++) { %>
+          <li><a href="/trips/<%=user.trips[i]._id%>"><%=user.trips[i].name%></a></li>
+          <% } %>
+        </ul>
+      </section>
+      <section>
+        <form action="/users/<%=user._id%>?_method=DELETE" method="post">
+          <input type="submit" value="Delete User"/>
+        </form>
+      </section>
+      <section>
+        <a href="/users/<%=user._id%>/edit">Edit</a>
+      </section>
+    </main>
+  </body>
+</html>
