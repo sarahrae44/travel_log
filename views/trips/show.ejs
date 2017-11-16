@@ -10,10 +10,10 @@
     The <%=trip.name%> was taken in <%=trip.date%>. Here are the notes: <%=trip.notes%>.<br/>
     <small>Contributed by <a href="/users/<%=user._id%>"><%=user.name%></a></small>
     <section>
-      <a href="/trips/<%=trip._id; %>/edit">Edit</a>
+      <a href="/trips/<%=trip._id%>/edit">Edit</a>
     </section>
     <section>
-      <form action="/trips/<%=trip._id; %>?_method=DELETE" method="POST">
+      <form action="/trips/<%=trip._id%>?_method=DELETE" method="post">
         <input type="submit" value="Delete Trip" />
       </form>
     </section>

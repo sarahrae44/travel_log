@@ -9,10 +9,11 @@
     <h1>Trips index page</h1>
     <ul>
       <% for(let i = 0; i < trips.length; i++){ %>
-      <li>The <a href="/trips/<%=trips[i].id %>"><%=trips[i].name; %></a> trip was taken <%=trips[i].date; %>.
+      <li>The <a href="/trips/<%=trips[i]._id%>"><%=trips[i].name%></a> trip was taken <%=trips[i].date%>.
       </li>
       <% } %>
     </ul>
     <a href="/">Home</a>
+    <a href="/trips/new">Add a new Trip</a>
   </body>
 </html>

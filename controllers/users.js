@@ -1,10 +1,14 @@
 const express = require('express');
-const router = express.Router();
 const User = require('../models/users.js');
 const Trip = require('../models/trips.js');
+const router = express.Router();
 
-router.get('/new', (req, res) => {
-  res.render('users/new.ejs');
+router.get('/', (req, res) => {
+  User.find({}, (err, foundUsers) => {
+    res.render('users/index.ejs', {
+      users: foundUsers
+    });
+  })
 });
 
 router.post('/', (req, res) => {
@@ -13,12 +17,8 @@ router.post('/', (req, res) => {
   });
 });
 
-router.get('/', (req, res) => {
-  User.find({}, (err, foundUsers) => {
-    res.render('users/index.ejs', {
-      users: foundUsers
-    });
-  })
+router.get('/new', (req, res) => {
+  res.render('users/new.ejs');
 });
 
 router.get('/:id', (req, res) => {
@@ -32,12 +32,12 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   User.findByIdAndRemove(req.params.id, (err, foundUser) => {
     const tripIds = [];
-    for (let i = 0; i < foundUser.trips.length; i++) {
+    for(let i = 0; i < foundUser.trips.length; i++) {
       tripIds.push(foundUser.trips[i]._id);
     }
     Trip.remove(
       {
-        _id : {
+        _id: {
           $in: tripIds
         }
       },

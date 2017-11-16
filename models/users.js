@@ -4,6 +4,7 @@ const Trip = require('./trips.js');
 const userSchema = mongoose.Schema({
   name: String,
   password: String,
+  profileImage: String,
   trips: [Trip.schema]
 });
 

@@ -13,13 +13,14 @@
       </ul>
     </nav>
     <h1>Edit <%=trip.name%> Page</h1>
-    <form action="/trips/<%=trip._id%>?_method=PUT" method="POST">
+    <form action="/trips/<%=trip._id%>?_method=PUT" method="post">
       <select name="userId">
         <% for(let i = 0; i < users.length; i++) { %>
         <option value="<%=users[i]._id%>"
         <% if(users[i]._id.toString() === tripUser._id.toString()){ %>
         selected
-        <% } %>>
+        <% } %>
+        >
           <%=users[i].name%>
         </option>
         <% } %>

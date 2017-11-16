@@ -8,7 +8,7 @@
   <body>
     <h1>Add a new trip</h1>
     <div class="noteField">
-      <form action="/trips" method="POST">
+      <form action="/trips" method="post">
         <select name="userId">
           <% for(let i = 0; i < users.length; i++) { %>
             <option value="<%=users[i]._id%>"><%=users[i].name%></option>
