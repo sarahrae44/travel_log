@@ -68,7 +68,7 @@ router.get('/:id/edit', (req, res) => {
 
 router.put('/:id', (req, res) => {
   Trip.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedTrip) => {
-    User.findOne({ 'trips._id' : req.params.id }, (err, foundUser) => {
+    User.findOne({ 'trips._id': req.params.id }, (err, foundUser) => {
       if(foundUser._id.toString() !== req.body.userId){
         foundUser.trips.id(req.params.id).remove();
         foundUser.save((err, savedFoundUser) => {

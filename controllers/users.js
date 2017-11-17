@@ -2,6 +2,7 @@ const express = require('express');
 const User = require('../models/users.js');
 const Trip = require('../models/trips.js');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
   User.find({}, (err, foundUsers) => {
@@ -12,6 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  // req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
   User.create(req.body, (err, createdUser) => {
     res.redirect('/users');
   });
